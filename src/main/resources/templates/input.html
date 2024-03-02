@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/input.css">
+</head>
+
+<body>
+    <form action="/new-expense" method="post">
+        <h2>Add New Expense</h2>
+        <div class="input">
+            <label for="">Subject</label>
+            <input type="text" name="subject" id="" class="input-filed" required>
+        </div>
+        <div class="input">
+            <label for="">Date</label>
+            <input type="date" name="date" id="" class="input-filed" required>
+        </div>
+        <div class="input">
+            <label for="">Amount</label>
+            <input type="text" name="amount" id="" class="input-filed" required>
+        </div>
+        <div class="input">
+            <input type="submit" value="Add" class="addbtn">
+            <a href="/login">Go Back</a>
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <form action="/signup" method="post">
+        <h2>Sign Up</h2>
+
+        <!-- -----userName -->
+
+        <div class="input">
+            <label class="input-label">UserName</label>
+            <input class="input-filed" type="text" name="username" onclick="moveUp('UserName') " required>
+        </div>
+
+        <!-- -----Email -->
+
+        <div class="input">
+            <label class="input-label" >Email</label>
+            <input class="input-filed" type="email" name="email" id="eValidate" onclick="moveUp('Email') " required>
+        </div>
+
+        <!-- -----Password, Confirm Password -->
+    
+        <div class="input">
+            <label class="input-label" >Password</label>
+            <input class="input-filed" type="password" name="password" id="pWord" onclick="moveUp('Password')" onkeyup="PasswordValidate()" required>
+        </div>
+        <div class="input">
+            <label class="input-label" >Confirm Password</label>
+            <input class="input-filed" type="password" name="password2" id="CpWord" onclick="moveUp('Confirm Password')" onkeyup="CPasswordValidate()" required>
+        </div>
+
+        <div class="input">
+            <input class="btn" type="submit" value="Sign Up">
+        </div>
+
+        <!-- -------Error------ -->
+        <div class="error">
+              <p id="error-show"></p>
+             <p th:if="${dupError}" th:text="${dupError}"></p>
+             <p th:if="${error}" th:text="${error}"></p>
+        </div>
+        <div class= "haveAcc">
+        	<p>Already Have An Account?</p>
+        	<a href="/login">Login</a>
+        </div>
+    </form>
+
+    <script src="js/form.js"></script>
+</body>
+</html>

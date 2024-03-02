@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <link rel="stylesheet" href="css/otp.css">
+</head>
+
+<body>
+    <form action="/recover" method="post">
+        <div class="input">
+            <label for="">OTP</label>
+            <input type="number" name="otp" class="input-filed">
+        </div>
+        <div class="input">
+            <input type="submit" value="Next" class="nextbtn">
+        </div>
+        <p th:if="${error}" style="color:red" th:text="${error}"></p>
+    </form>
+
+</body>
+
+</html>

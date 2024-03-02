@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expenses Tracker</title>
+<link rel="stylesheet" href="css/fpage.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+	<div id="container">
+		<div class="nav" id="navi">
+			<div class="nav-profile">
+			  <i class="fa-solid fa-xmark"
+					id="closebar"></i>
+				<p class="Name">Welcome [[${session.activeUser.username}]]</p>
+			</div>
+			<div class="nav-menu">
+				<ul>
+					<li><i class="fa-brands fa-windows"></i><a href="/login">DashBoard</a></li>
+					<li><i class="fa-brands fa-monero"></i><a href="/expenses">Expenses</a></li>
+					<li><i class="fa-solid fa-pen-to-square"></i><a href="/new-expense">Add Expense</a></li>
+					<li><i class="fa-solid fa-right-from-bracket"></i><a href="/logout">Logout</a>
+				</ul>
+			</div>
+		</div>
+		<div class="main-content">
+			<div class="main-head">
+				<i class="fa-solid fa-bars" id="openbar"></i>
+				<h2>Expenses</h2>
+		         <p>Today</p>
+
+				<table class="table">
+					<thead class="tbl-header">
+						<tr>
+							<th>Subject</th>
+							<th>Amount</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody class="tbl-content">
+						<tr th:each="exp :${session.todayList}">
+							<td>[[${exp.subject}]]</td>
+							<td>[[${exp.amount}]]</td>
+							<td>[[${exp.date}]]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+
+			<div class="show-bar">
+				<div class="expenses-row">
+					Elevate your Financial journey with our intuitive expense tracking system.
+					Empower savings by effortlessly recording your expenses because managing money should
+					be simple, smart, and leave you with more to save.
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		const openBar = document.getElementById('openbar');
+		const navi = document.getElementById('navi');
+		const closeBar = document.getElementById('closebar');
+	
+		openBar.addEventListener('click',()=>{
+			navi.style.left = "-10px";
+			closeBar.style.display= 'block';
+		})
+
+		closeBar.addEventListener('click', ()=>{
+			navi.style.left = '-400px'
+			closeBar.style.display='none'
+		})
+	</script>
+</body>
+
+</html>

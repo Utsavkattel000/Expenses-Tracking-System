@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <form action="/login" method ="post">
+        <h2>Login</h2>
+
+        <!-- -----Email -->
+
+        <div class="input">
+            <label class="input-label" >Email</label>
+            <input class="input-filed" name="email" type="email" id="eValidate" onclick="moveUp('Email') " required>
+        </div>
+
+        <!-- -----Password-->
+    
+        <div class="input">
+            <label class="input-label" >Password</label>
+            <input class="input-filed" name="password" type="password" id="pWord" onclick="moveUp('Password')" required>
+        </div>
+
+        <div class="forget">
+            <a href="/forgot">Forgot Password?</a>
+        </div>
+
+        <!-- ----------Remember me-------- -->
+
+        <div class="remember">
+            <input type="checkbox" name="remember">
+            <label>Remember</label>
+        </div>
+
+        <!-- -----loginbtn---- -->
+        <div class="input login">
+            <input class="lgbtn" type="submit" value="Login">
+        </div>
+
+        <!-- --------error--------- -->
+        <div class="error">
+          <p th:if="${success}" style="color:green" th:text="${success}"></p>
+            <p th:if="${error}" th:text="${error}"></p>
+        </div>
+        
+        <div class= "haveAcc">
+        	<p>Don't Have An Account?</p>
+        	<a href="/signup">Sign Up</a>
+        </div>
+    </form>
+
+    <script src="js/form.js"></script>
+</body>
+</html>

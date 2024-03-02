@@ -1,0 +1,64 @@
+form .forget {
+    margin-top: 30px;
+}
+
+form .forget a{
+    text-decoration: none;
+}
+
+form .error{
+    margin: 40px 0 0 0;
+    color: red;
+}
+
+form .input.login{
+    display: flex;
+    justify-content: center;
+}
+
+form .forget, .remember{
+    display: inline-block;
+}
+
+form .remember{
+    margin-left: 100px;
+}
+
+form .input, .forget,.remember,.input.login{
+    margin: 30px 0;
+}
+form .input .lgbtn{
+	width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+form .haveAcc p,a {
+	display: inline;
+	margin-top: 20px;
+}
+form .haveAcc p{
+	margin-right:10px;
+	margin-left:35px;
+}
+
+/* -----------Responsive--------- */
+
+@media screen and (max-width: 1400px) {
+    form .input, .forget,.remember,.input.login{
+        margin-bottom: 10px;
+    }
+    form .error{
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    form .input, .forget,.remember,.input.login{
+        margin-bottom: 5px;
+    }
+    form .remember{
+        margin-left: 50px;
+    }
+    
+}

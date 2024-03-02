@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="css/expense.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+	<div class="top-div"><a href="/login">Go Back</a></div>
+	
+    <div class="table-wrapper">
+        <table class="f1-table">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="a :${allList}">
+                    <td>[[${a.subject}]]</td>
+                    <td>[[${a.amount}]]</td>
+                    <td>[[${a.date}]]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

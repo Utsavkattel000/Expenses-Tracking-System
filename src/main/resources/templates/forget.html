@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/forget.css">
+</head>
+
+<body>
+    <form action="/forgot" method="post">
+        <div class="input">
+            <label for="">Email</label>
+            <input type="email" name="email" class="input-filed" required>
+        </div>
+        <div class="input">
+            <input type="submit" value="Next" class="nextbtn">
+        </div>
+        <p th:if="${error}" style="color:red" th:text="${error}"></p>
+    </form>
+
+</body>
+
+</html>
